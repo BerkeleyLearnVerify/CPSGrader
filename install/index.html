@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head profile="http://www.w3.org/2005/10/profile">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="CPSGrader">
+<meta name="author" content="">
+<link rel="icon" type="image/png" href="../static/img/cg.png">
+
+<!-- Stylesheets -->
+<link href="../static/css/bootstrap.min.css" rel="stylesheet">
+<link href="../static/css/bootstrap-responsive.css" rel="stylesheet">
+<link href="../static/css/cpsgrader.css" rel="stylesheet">
+
+<!-- <link href="css/google-code-prettify/prettify.css"
+      rel="stylesheet"></script> -->
+
+<title>CPSGrader: UCBerkeley Auto-Grader for Cyber-Physical
+  Systems</title>
+</head>
+
+
+<body>
+  <div id="mainnav" class="navbar navbar navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle"
+          data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="icon-bar"></span> <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../"><IMG
+          src="../static/img/logo.png" height=30 /></a>
+      </div>
+      <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+          <li><a href="../about">About</a></li>
+            <li><a href="../install">Download and Install</a></li>
+          <li><a href="../getting-started">Getting Started</a></li>
+          <li><a href="../contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-3" id="sidenav-wrapper">
+        <div id="sidenav" role="navigation">
+          <div class="well well-sm">
+            <ul class="nav">
+              <li><a href="#download-cpsgrader" class="navigate">Downloading</a></li>
+              <li><a href="#install" class="navigate">Installation</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-9">
+        <div id="download-cpsgrader">
+          <div class="page-h1">
+            <h1>Downloading</h1>
+          </div>
+          <div>
+
+            <div class="page-h2">
+              <h3>Latest Release</h3>
+            </div>
+            <p>
+              The current version of CPSGrader is 0.1 (released Nov 2014). The 
+              download consists of a single 40 MB zip archive.</p>
+              <p>
+              <a class="btn btn-primary" href="download"> Download CPSGrader </a>
+            </p>
+            <p>
+              The only requirement to build the CPSGrader library is a modern
+              C++ compiler.
+            </p>
+
+            <h3>Development Version</h3>
+
+            <p>
+              An access to the development version of CPSgrader is
+              available upon request to the developpers. Please <a
+                href="../contact">contact us</a>.
+            </p>
+          </div>
+
+        </div>
+
+        <div id="install">
+          <div class="page-h1">
+            <h1>Installation</h1>
+          </div>
+          <h3>Requirements</h3>
+
+          <p>Building the CPSGrader library from sources is
+            currently based on <em>Makefiles</em> and the only requirement is a modern <em>C++</em> compiler. </p>
+
+          <p> CPSGrader download comes with <strong> CyberSim </strong> -- a robotics simulator based on NI LabView Robotics which was used in the MOOC <a
+                    href="https://www.edx.org/course/uc-berkeleyx/uc-berkeleyx-eecs149-1x-cyber-physical-1629"
+                    target="_blank">
+                EECS149.1x </a> on edX. 
+             Using CyberSim only requires a computer (or Virtual Machine) running Windows OS.</p>
+
+          <h3>Folder Organization</h3>
+
+          <p>Uncompressing the archive should create the following
+            folders and files:</p>
+          <pre>
+- README.md:                Instruction on installation and getting started.
+- STLDriver/                CPSGrader main source code and library 
+- Simulators/               Folders with various simulators or simulator interfaces for CPSGrader
+- Simulators/CPSFileGrader  A simple program using CPSGrader library with trace files  
+- Simulators/EECS149lab     Simulator (CyberSim) and material used for EECS149 on-campus and MOOC offerings 
+          </pre> 
+
+          <h3>Compiling the CPSGrader library</h3>
+
+          <p>
+            Go into <code>STLDriver</code> and type <code>make</code>. This will create
+            <code>STLDriver/lib/libcpsgrader.a</code> (or a bunch of error messages, in which case 
+            you'd be well advised to <a href="../contact">contact us</a>).
+          </p>
+
+          <h3>Testing the CPSGrader library</h3>
+
+          <ol>
+            <li>Go into <code>Simulators/CPSFileGrader</code></li>
+            <li>Type <code>make</code>. This will create a binary called
+              CPSFileGrader (or a bunch of errors etc).</li>
+            <li>Test first with <code>./CPSFileGrader simple_test.stl</code></li>
+            <li>If you don't see a bunch of errors (in which case,
+              you'd be well advised to etc), try the more
+              involved <code>./CPSFileGrader grading_nav_hill.stl</code>. Note
+              that if everything went well, this will create a file
+              named <code>test_log.txt</code>. Compare this with
+              <code>traces/0001/test_log.txt</code>. If the results are consistent,
+              CPSGrader is working as intended.
+            </li>
+          </ol>
+
+
+          <p>
+            If you run into any issues during installation, please <a
+              href="../contact">contact us</a> and we will respond as
+            soon as possible.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!-- container -->
+
+    <hr />
+
+    <div id="footer" class="row">
+      <div class="col-lg-6 col-lg-offset-3">
+        <h6>
+          <small>
+            <p class="text-center">
+              Website designed with, and inspired by, <a
+                href="http://getbootstrap.com/">Bootstrap</a> | <a
+                href="http://bootswatch.com/spacelab/">Space Lab</a>
+              theme from <a href="http://bootswatch.com/">Bootswatch</a>
+            </p>
+          </small>
+        </h6>
+      </div>
+    </div>
+  </div>
+  <!-- container -->
+
+
+  <!-- This code that loads JavaScript files is placed at the end of
+      the document, so that the pages load faster. -->
+  <script src="../static/js/jquery.js"></script>
+  <script src="../static/js/bootstrap.min.js"></script>
+  <script src="../static/js/cpsgrader.js"></script>
+  <script>
+      (function(i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function() {
+          (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date();
+        a = s.createElement(o), m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+      })(window, document, 'script',
+          '//www.google-analytics.com/analytics.js', 'ga');
+
+      ga('create', 'UA-57139954-1', 'auto');
+      ga('send', 'pageview');
+    </script>
+  
+  <!-- <script src="js/google-code-prettify/prettify.js"></script> -->
+</body>
+</html>

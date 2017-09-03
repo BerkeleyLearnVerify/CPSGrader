@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head profile="http://www.w3.org/2005/10/profile">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="CPSGrader">
+<meta name="author" content="">
+<link rel="icon" type="image/png" href="../static/img/cg.png">
+
+<!-- Stylesheets -->
+<link href="../static/css/bootstrap.min.css" rel="stylesheet">
+<link href="../static/css/bootstrap-responsive.css" rel="stylesheet">
+<link href="../static/css/cpsgrader.css" rel="stylesheet">
+
+<!-- <link href="css/google-code-prettify/prettify.css"
+      rel="stylesheet"></script> -->
+
+<title>CPSGrader: UCBerkeley Auto-Grader for Cyber-Physical
+  Systems</title>
+</head>
+
+
+<body>
+  <div id="mainnav" class="navbar navbar navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle"
+          data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="icon-bar"></span> <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../"><IMG
+          src="../static/img/logo.png" height=30 /></a>
+      </div>
+      <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+          <li><a href="../about">About</a></li>
+          <li><a href="../install">Download and Install</a></li>
+          <li><a href="../getting-started">Getting Started</a></li>
+          <li><a href="../contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-3" id="sidenav-wrapper">
+        <div id="sidenav" role="navigation">
+          <div class="well well-sm">
+            <ul class="nav">
+              <li><a href="#tutorial" class="navigate">Tutorial</a></li>
+              <li><a href="#custom" class="navigate">Using a
+                  Custom Simulator</a></li>
+              <li><a href="#cybersim" class="navigate">Using
+                  CyberSim</a></li>
+              <li><a href="#synth" class="navigate">Synthesis
+                  of Test Plans</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-9">
+        <div id="tutorial">
+          <div class="page-h1">
+            <h1>Tutorial</h1>
+          </div>
+          <p>A tutorial presenting some background on temporal logic
+            testers and the syntax used in CPSGrader.</p>
+          <p>
+            <a class="btn btn-primary btn-sm"
+              href="CPSGrader_tutorial.pdf"> Download PDF Tutorial</a>
+          </p>
+        </div>
+
+        <div id="custom">
+          <div class="page-h1">
+            <h1>Using CPSGrader with a Custom Simulator</h1>
+          </div>
+
+          <p>We propose currently two methods:</p>
+
+          <ol>
+            <li><p>
+                <b>File interface:</b> The simplest method is to have
+                the custom simulator write traces into files and grade
+                them using the program CPSFileGrader.
+              </p></li>
+            <li><p>
+                <b>C++ API interface:</b> CPSGrader main class is
+                STLDriver, which exposes a simple API to run tests
+                defined in a test plan. The easiest way to get started
+                with the C++ API is to modify CPSFileGrader.cpp by
+                replacing the call to the read_data function by a call
+                to the simulator, or a wrapper function which will run a
+                simulation and write the result in a simple vector of
+                vector of double.
+              </p></li>
+          </ol>
+
+          If these methods are not working for you, or if you encounter
+          any issue, please <a href="../contact">Contact us</a> and we
+          will figure out a way to interface your simulator to
+          CPSGrader.
+          </p>
+          </li>
+
+
+        </div>
+
+        <div id="cybersim">
+          <div class="page-h1">
+            <h1>Using CyberSim</h1>
+          </div>
+          CPSGrader comes with a robotic simulator based on NI LabView
+          Robotics which was used in the MOOC EECS149.1x on edX.
+          Instructions on how use CyberSim+CPSGrader are still available
+          in the Virtual Lab section of the MOOC page: <a
+            href="https://courses.edx.org/courses/BerkeleyX/EECS149.1x/2T2014/info"
+            target="_blank">EECS 149.1x info page</a>.
+          </p>
+          Customizing assignments and test plans used for grading the
+          EECS149 labs is partially covered in the tutorial above.
+          </p>
+          Here is some information about using the NI Robotics Simulator:
+          <ul>
+            <li><a href="http://www.ni.com/white-paper/14133/en/">
+                Overview of the LabVIEW Robotics Environment Simulator
+                </a>
+            </li>
+            <li><a href="http://www.ni.com/white-paper/10483/en/">
+                Getting Started with LabVIEW Robotics
+            </a>
+            </li>
+            <li><a href="http://zone.ni.com/reference/en-XX/help/372983F-01/TOC6.htm">
+                LabVIEW 2014 Robotics Module Help - Simulating Mobile Robots
+            </a>
+            </li>
+
+
+          </ul>
+
+        </div>
+
+        <div id="synth">
+          <div class="page-h1">
+            <h1>Synthesis of Test Plans</h1>
+          </div>
+          <p>
+            Testers to be used with CPSGrader can also be automatically
+            synthesized using labeled examples of student
+            solutions/traces that exhibit certain desired behavior.
+            Details of the technique are in our <a
+              href="../about/juniwal_emsoft14.html" target="_blank">EMSOFT'14
+              paper</a>. We also provide a small module to demonstrate how
+            synthesis works. You will need to install the <a
+              href="http://www.eecs.berkeley.edu/~donze/breach_page.html"
+              target="_blank"> Breach</a> MATLAB toolbox to run this
+            module.
+          </p>
+          <p>
+            <a class="btn btn-primary btn-sm" href="synth.zip">
+              Download Synthesis Module</a> (13 MB zip archive)
+          </p>
+
+        </div>
+
+
+      </div>
+
+      <!-- container -->
+
+      <hr />
+
+      <div id="footer" class="row">
+        <div class="col-lg-6 col-lg-offset-3">
+          <h6>
+            <small>
+              <p class="text-center">
+                Website designed with, and inspired by, <a
+                  href="http://getbootstrap.com/">Bootstrap</a> | <a
+                  href="http://bootswatch.com/spacelab/">Space Lab</a>
+                theme from <a href="http://bootswatch.com/">Bootswatch</a>
+              </p>
+            </small>
+          </h6>
+        </div>
+      </div>
+    </div>
+    <!-- container -->
+
+
+    <!-- This code that loads JavaScript files is placed at the end of
+      the document, so that the pages load faster. -->
+    <script src="../static/js/jquery.js"></script>
+    <script src="../static/js/bootstrap.min.js"></script>
+    <script src="../static/js/cpsgrader.js"></script>
+    <script>
+					(function(i, s, o, g, r, a, m) {
+						i['GoogleAnalyticsObject'] = r;
+						i[r] = i[r] || function() {
+							(i[r].q = i[r].q || []).push(arguments)
+						}, i[r].l = 1 * new Date();
+						a = s.createElement(o),
+								m = s.getElementsByTagName(o)[0];
+						a.async = 1;
+						a.src = g;
+						m.parentNode.insertBefore(a, m)
+					})(window, document, 'script',
+							'//www.google-analytics.com/analytics.js', 'ga');
+
+					ga('create', 'UA-57139954-1', 'auto');
+					ga('send', 'pageview');
+				</script>
+
+    <!-- <script src="js/google-code-prettify/prettify.js"></script> -->
+</body>
+</html>

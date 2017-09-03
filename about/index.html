@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head profile="http://www.w3.org/2005/10/profile">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="CPSGrader">
+<meta name="author" content="">
+<link rel="icon" type="image/png" href="../static/img/cg.png">
+
+<!-- Stylesheets -->
+<link href="../static/css/bootstrap.min.css" rel="stylesheet">
+<link href="../static/css/bootstrap-responsive.css" rel="stylesheet">
+<link href="../static/css/cpsgrader.css" rel="stylesheet">
+
+<!-- <link href="css/google-code-prettify/prettify.css"
+      rel="stylesheet"></script> -->
+
+<title>CPSGrader: UCBerkeley Auto-Grader for Cyber-Physical
+  Systems</title>
+</head>
+
+<body>
+  <div id="mainnav" class="navbar navbar navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle"
+          data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="icon-bar"></span> <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../"><IMG
+          src="../static/img/logo.png" height=30 /></a>
+      </div>
+      <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+          <li><a href="../about">About</a></li>
+          <li><a href="../install">Download and Install</a></li>
+          <li><a href="../getting-started">Getting Started</a></li>
+          <li><a href="../contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-3" id="sidenav-wrapper">
+        <div id="sidenav" role="navigation">
+          <div class="well well-sm">
+            <ul class="nav">
+              <li><a href="#introduction" class="navigate">
+                  Introduction</a></li>
+              <li><a href="#deployment" class="navigate">
+                  Deployment</a></li>
+              <li><a href="#publications" class="navigate">
+                  Publications</a></li>
+                <li><a href="#talks" class="navigate">
+                  Talks</a></li>
+                <li><a href="#team" class="navigate">
+                  Team</a></li>
+                <li><a href="#licenses" class="navigate">
+                  Licenses</a></li>
+              <li><a href="#acknowledgments" class="navigate">
+                  Acknowledgments</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-9">
+        <div id="introduction">
+          <div class="page-h1">
+            <h1>Introduction</h1>
+          </div>
+          <div>
+            <p>
+              CPSGrader is an <b>automatic grading and feedback
+                generation tool <i>(auto-grader)</i> for laboratory
+                courses
+              </b> developed at the University of California, Berkeley.
+              CPSGrader uses Signal Temporal Logic (STL) based <i>test
+                benches</i> to monitor simulation traces of student
+              solutions for faults. It is designed to work with any
+              black-box simulator. The test benches in CPSGrader are
+              "parameterized" to be robust to certain allowed variations
+              in student solutions. Each test bench serves as a
+              classifier to detect presence/absence of a particular kind
+              of fault and we automatically synthesize the
+              classification boundaries (in terms of ranges of test
+              bench parameters) using a sample set of previously known
+              correct and faulty solutions. The auto-grader is an
+              independent library written in C++ that can plug into any
+              simulator via an API, and the test bench synthesis is done
+              in MATLAB using the <a
+                href="http://www.eecs.berkeley.edu/~donze/breach_page.html"
+                target="_blank"> Breach</a> toolbox.
+            </p>
+          </div>
+        </div>
+
+        <div id="deployment">
+          <div class="page-h1">
+            <h1>
+              <img src="../static/img/edx.png" height=50 /> Deployment
+            </h1>
+          </div>
+          <div>
+            <p>
+              CPSGrader was used in conjunction with the physics-based
+              simulation driven virtual robotics laboratory <i>(CyberSim)</i>
+              for the laboratory component of the online Cyber-Physical
+              Systems MOOC <a
+                href="https://www.edx.org/course/uc-berkeleyx/uc-berkeleyx-eecs149-1x-cyber-physical-1629"
+                target="_blank"> EECS 149.1x </a> offered on edX. This
+              is the first online course to use a physics-based virtual
+              robotics laboratory and the first deployed auto-grader
+              that uses formal verification. We received very positive
+              feedback about the tool with 86% students reporting that
+              the debugging information generated by CPSGrader was
+              crucial for solving the lab exercises. CPSGrader is a
+              significant step in furthering the broader agenda of use
+              of formal methods in making engineering education fun and
+              scalable to large number of students across the world.
+
+            </p>
+          </div>
+        </div>
+
+
+        <div id="publications">
+          <div class="page-h1">
+            <h1>Publications</h1>
+          </div>
+          <div>
+            <ul>
+                
+              <li>Garvit Juniwal. <strong>CPSGrader: Auto-Grading and Feedback Generation for Cyber-Physical Systems Education.</strong> <em>
+                  Masters Thesis</em>, December 2014<br /> <a
+                href="Garvit_thesis.pdf">[PDF]</a> <a
+                href="http://www.eecs.berkeley.edu/Pubs/TechRpts/2014/EECS-2014-237.html" target="_blank">[Details]</a>
+                </li>
+
+              <li>Garvit Juniwal, Alexandre Donz&eacute;, Jeff C.
+                Jensen, Sanjit A. Seshia. <strong>CPSGrader:
+                  Synthesizing Temporal Logic Testers for Auto-Grading
+                  an Embedded Systems Laboratory.</strong> <em>In
+                  Proceedings of the 14th International Conference on
+                  Embedded Software (EMSOFT)</em>, October 2014<br /> <a
+                href="MOOC_EMSOFT14.pdf">[PDF]</a> <a
+                href="juniwal_emsoft14.html" target="_blank">[Details]</a>
+                <br />
+<!---                Anonymized data from EECS149 (Fall 2013, on-campus) used in the
+                experimental evaluation is available upon <a href="../contact">
+                request</a>.--->
+             </li>
+
+                <li> Garvit Juniwal, Sakshi Jain, Alexandre Donz&eacute;, Sanjit
+            A. Seshia. <strong>Clustering-Based Active Learning for
+                CPSGrader.</strong> <em>In Proceedings of the Second ACM Conference on Learning@Scale
+                (L@S)</em>, March 2015<br /><a href="MOOC_LAS15.pdf">[PDF]</a> <a
+                href="juniwal_las15.html" target="_blank">[Details]</a><br />
+                </li>
+
+
+            </ul>
+          </div>
+        </div>
+
+        <div id="talks">
+          <div class="page-h1">
+            <h1>Talks</h1>
+          </div>
+          <div>
+            <ul>
+              <li><strong>CPSGrader: Auto-Grading a
+                  Cyber-Physical Systems Lab. </strong> Garvit Juniwal. <em>At
+                  Embedded Systems Week (EMSOFT)</em>, New Delhi INDIA, Oct
+                13-17 2014<br> <a href="MOOC-EMSOFT-2014-talk.pptx">[PPT]</a>
+                (for 30 min talk)</li>
+              <li><strong>Towards Lab-Based MOOCs:
+                  Cyber-Physical Systems, Robotics, and Beyond.</strong> Sanjit
+                A. Seshia. <em>At National Instruments (NI) Week</em>,
+                August 2014<br> <a href="LabMOOCs-Seshia-UCB.pdf">[PDF]</a>
+                (for 3 min overview talk)</li>
+              <li><strong>Towards Lab-Based MOOCs:
+                  Cyber-Physical Systems, Robotics, and Beyond.</strong> Sanjit
+                A. Seshia. <em>At Learning with MOOCs: A
+                  Practitioner's Workshop (LWMOOC)</em>, August 2014<br>
+                <a href="LabMOOCs-UCB.pptx">[PPT]</a> (for 30 min talk)
+                <a
+                href="http://webcast.amps.ms.mit.edu/fall2014/MOOCs/LOM-vod-d2-2.html"
+                target="_blank">[Session Video]</a></li>
+
+            </ul>
+          </div>
+        </div>
+
+        <div id="team">
+          <div class="page-h1">
+            <h1>Team</h1>
+          </div>
+          <div class="border row">
+            <div class="border col-sm-3">
+              <center>
+                <a href="http://www.eecs.berkeley.edu/~donze"
+                  target="_blank"> <img src="../static/img/alex.jpg"
+                  width=120 /><br> Alexandre Donz&eacute
+                </a>
+              </center>
+            </div>
+            <div class="border col-sm-3">
+              <center>
+                <a href="http://www.eecs.berkeley.edu/~garvitjuniwal"
+                  target="_blank"> <img
+                  src="../static/img/garvit.jpg" width=120 /><br>
+                  Garvit Juniwal
+                </a>
+              </center>
+            </div>
+            <div class="border col-sm-3">
+              <center>
+                <a href="http://www.linkedin.com/in/elgeeko"
+                  target="_blank"> <img src="../static/img/jeff.jpg"
+                  width=120 /><br> Jeff C. Jensen
+                </a>
+              </center>
+            </div>
+            <div class="border col-sm-3">
+              <center>
+                <a href="http://www.eecs.berkeley.edu/~sseshia"
+                  target="_blank"> <img
+                  src="../static/img/sanjit.jpg" width=120 /><br>
+                  Sanjit A. Seshia
+                </a>
+              </center>
+            </div>
+          </div>
+        </div>
+
+        <div id="licenses">
+          <div class="page-h1">
+            <h1>Licenses</h1>
+          </div>
+          <div>
+            <p>Copyright ©2014, Alexandre Donzé, Garvit Juniwal,
+              Jeff C. Jensen, and Sanjit A. Seshia. All rights reserved.
+              CPSGrader is licensed under the BSD-3-clause license.</p>
+          </div>
+        </div>
+
+        <div id="acknowledgments">
+          <div class="page-h1">
+            <h1>Acknowledgments</h1>
+          </div>
+          <div>
+            <p>This work was supported in part by TerraSwarm, one of
+              the six centers of STARnet, a Semiconductor Research
+              Corporation program sponsored by DARPA, by the NSF ExCAPE
+              project (CCF-1139138), and by National Instruments
+              Corporation.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- container -->
+
+    <hr />
+
+
+    <div id="footer" class="row">
+      <div class="col-lg-6 col-lg-offset-3">
+        <h6>
+          <small>
+            <p class="text-center">
+              Website designed with, and inspired by, <a
+                href="http://getbootstrap.com/">Bootstrap</a> | <a
+                href="http://bootswatch.com/spacelab/">Space Lab</a>
+              theme from <a href="http://bootswatch.com/">Bootswatch</a>
+            </p>
+          </small>
+        </h6>
+      </div>
+    </div>
+  </div>
+  <!-- container -->
+
+
+  <!-- This code that loads JavaScript files is placed at the end of
+      the document, so that the pages load faster. -->
+  <script src="../static/js/jquery.js"></script>
+  <script src="../static/js/bootstrap.min.js"></script>
+  <script src="../static/js/cpsgrader.js"></script>
+  <script>
+      (function(i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function() {
+          (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date();
+        a = s.createElement(o), m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+      })(window, document, 'script',
+          '//www.google-analytics.com/analytics.js', 'ga');
+
+      ga('create', 'UA-57139954-1', 'auto');
+      ga('send', 'pageview');
+    </script>
+  
+  <!-- <script src="js/google-code-prettify/prettify.js"></script> -->
+</body>
+</html>
+

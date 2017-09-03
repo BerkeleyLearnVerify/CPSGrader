@@ -1,0 +1,73 @@
+/* Styles specific to the CPSGrader website. */
+
+body {
+    padding-top: 50px;
+}
+
+@media all and (min-width: 1200px) {
+    #sidenav {
+        width: 266px;
+    }
+}
+
+@media all and (min-width: 1200px) {
+    #sidenav.affix {
+        width: 266px;
+        top: 75px;
+    }
+}
+
+@media all and (max-width: 1199px) {
+    #sidenav.affix {
+        width: auto;
+        position: static;
+    }
+}
+
+.no-margin-bottom {
+    margin-bottom: 0px;
+}
+
+.page-h1 {
+    padding-top: 70px;
+    margin-top: -45px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #eeeeee;
+}
+
+h2 {
+    padding-top: 40px;
+    margin-top: -10px;
+}
+
+a.no-underline {
+    text-decoration: none;
+}
+
+.parent-tag-info {
+    padding-bottom: 10px;
+}
+
+.panel-bottom {
+    background-color: #f5f5f5;
+}
+
+.callout {
+    /* As seen on the Bootstrap website. */
+    margin: 20px 0;
+    padding: 15px 30px 15px 15px;
+    border-left: 5px solid #eeeeee;
+}
+
+.callout-info {
+    background-color: #f5f5f5;
+}
+
+#message-box {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+#footer {
+    font-size: small;
+}
