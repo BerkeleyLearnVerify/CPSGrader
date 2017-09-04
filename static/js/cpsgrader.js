@@ -151,7 +151,7 @@ $(document).ready(function()
                 );
                 $("#submission-alert").collapse("show");
                 $("#form-text").empty();
-                $("#form-text").append("<p> <a class=\"btn btn-primary btn-md\" href=\"../../dist/cpsgrader-release-0.1.zip\"> Download</a> </p> ");
+                $("#form-text").append("<p> <a class=\"btn btn-primary btn-md\" href=\"https://github.com/BerkeleyLearnVerify/CPSGrader/releases\"> Download</a> </p> ");
                 $("#form-heading").text("");
             }
         );
