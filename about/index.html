@@ -80,22 +80,27 @@
                 generation tool <i>(auto-grader)</i> for laboratory
                 courses
               </b> developed at the University of California, Berkeley.
-              CPSGrader uses Signal Temporal Logic (STL) based <i>test
+              CPSGrader uses temporal logics with quantative semantics,
+		such as Metric Temporal Logic (MTL) or Signal Temporal Logic (STL) 
+		to define <i>test
                 benches</i> to monitor simulation traces of student
-              solutions for faults. It is designed to work with any
-              black-box simulator. The test benches in CPSGrader are
+              solutions for mistakes/faults. It is designed to work with any
+              black-box simulator. <br>
+              The test benches in CPSGrader are
               "parameterized" to be robust to certain allowed variations
               in student solutions. Each test bench serves as a
               classifier to detect presence/absence of a particular kind
               of fault and we automatically synthesize the
               classification boundaries (in terms of ranges of test
               bench parameters) using a sample set of previously known
-              correct and faulty solutions. The auto-grader is an
+              correct and faulty solutions. <br>
+		The first version of our auto-grader is an
               independent library written in C++ that can plug into any
-              simulator via an API, and the test bench synthesis is done
-              in MATLAB using the <a
-                href="http://www.eecs.berkeley.edu/~donze/breach_page.html"
-                target="_blank"> Breach</a> toolbox.
+              simulator via an API, and our first version of the test bench synthesis is done
+              in MATLAB using the <a href="http://www.eecs.berkeley.edu/~donze/breach_page.html"
+                target="_blank"> Breach</a> toolbox. Our newer auto-grader has been
+ 		developed using the <a href="https://github.com/mvcisback/py-metric-temporal-logic/tree/master/mtl">pyMTL</a> and 
+		<a href="https://github.com/BerkeleyLearnVerify/Scenic">Scenic</a> software tools.
             </p>
           </div>
         </div>
@@ -125,6 +130,11 @@
               scalable to large number of students across the world.
 
             </p>
+		<p>CPSGrader has also been used on campus at Berkeley in the 
+		course "Introduction to Embedded Systems",
+		and the newer version has been used to run a remote/virtual laboratory for this class during the
+		COVID-19 pandemic.
+		</p>
           </div>
         </div>
 
@@ -136,6 +146,10 @@
           <div>
             <ul>
                 
+		<li>Sanjit A. Seshia. <strong>Cyber-Physical Systems Education: Explorations and Dreams</strong>. In Principles of Modeling - Essays Dedicated to Edward A. Lee on the Occasion of His 60th Birthday, pp. 407–422, 2018.
+		<a href="https://people.eecs.berkeley.edu/~sseshia/pubs/b2hd-seshia-modeling18.html">[PDF]</a>
+		</li>
+
               <li>Garvit Juniwal. <strong>CPSGrader: Auto-Grading and Feedback Generation for Cyber-Physical Systems Education.</strong> <em>
                   Masters Thesis</em>, December 2014<br /> <a
                 href="Garvit_thesis.pdf">[PDF]</a> <a
@@ -200,32 +214,6 @@
           <div class="page-h1">
             <h1>Team</h1>
           </div>
-          <div class="border row">
-            <div class="border col-sm-3">
-              <center>
-                <a href="http://www.eecs.berkeley.edu/~donze"
-                  target="_blank"> <img src="../static/img/alex.jpg"
-                  width=120 /><br> Alexandre Donz&eacute
-                </a>
-              </center>
-            </div>
-            <div class="border col-sm-3">
-              <center>
-                <a href="http://www.eecs.berkeley.edu/~garvitjuniwal"
-                  target="_blank"> <img
-                  src="../static/img/garvit.jpg" width=120 /><br>
-                  Garvit Juniwal
-                </a>
-              </center>
-            </div>
-            <div class="border col-sm-3">
-              <center>
-                <a href="http://www.linkedin.com/in/elgeeko"
-                  target="_blank"> <img src="../static/img/jeff.jpg"
-                  width=120 /><br> Jeff C. Jensen
-                </a>
-              </center>
-            </div>
             <div class="border col-sm-3">
               <center>
                 <a href="http://www.eecs.berkeley.edu/~sseshia"
@@ -262,6 +250,32 @@
                 </a>
               </center>
             </div>
+          <div class="border row">
+            <div class="border col-sm-3">
+              <center>
+                <a href="http://www.eecs.berkeley.edu/~donze"
+                  target="_blank"> <img src="../static/img/alex.jpg"
+                  width=120 /><br> Alexandre Donz&eacute
+                </a>
+              </center>
+            </div>
+            <div class="border col-sm-3">
+              <center>
+                <a href="http://www.eecs.berkeley.edu/~garvitjuniwal"
+                  target="_blank"> <img
+                  src="../static/img/garvit.jpg" width=120 /><br>
+                  Garvit Juniwal
+                </a>
+              </center>
+            </div>
+            <div class="border col-sm-3">
+              <center>
+                <a href="http://www.linkedin.com/in/elgeeko"
+                  target="_blank"> <img src="../static/img/jeff.jpg"
+                  width=120 /><br> Jeff C. Jensen
+                </a>
+              </center>
+            </div>
           </div>
         </div>
 
@@ -270,8 +284,8 @@
             <h1>Licenses</h1>
           </div>
           <div>
-            <p>Copyright ©2014, Alexandre Donzé, Garvit Juniwal, 
-              Jeff C. Jensen, Sanjit A. Seshia, Bernard Chen, Edward Kim, Hazem Torfah, and Victoria Tuck. All rights reserved.
+            <p>Copyright ©2014-2020, Sanjit A. Seshia, Alexandre Donzé, Garvit Juniwal, 
+              Jeff C. Jensen, Bernard Chen, Edward Kim, Hazem Torfah, and Victoria Tuck. All rights reserved.
               CPSGrader is licensed under the BSD-3-clause license.</p>
           </div>
         </div>
@@ -281,10 +295,10 @@
             <h1>Acknowledgments</h1>
           </div>
           <div>
-            <p>This work was supported in part by TerraSwarm, one of
+            <p>This work has been supported in part by TerraSwarm, one of
               the six centers of STARnet, a Semiconductor Research
               Corporation program sponsored by DARPA, by the NSF ExCAPE
-              project (CCF-1139138), and by National Instruments
+              project (CCF-1139138), by the NSF VeHICaL project (CNS-1545126), and by National Instruments
               Corporation.</p>
           </div>
         </div>
